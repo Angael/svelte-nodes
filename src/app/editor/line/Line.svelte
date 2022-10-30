@@ -6,7 +6,7 @@
 
 	export let connection: IConnection;
 	let start: [any, any] = [0, 0];
-	let end: [any, any] = [10, 10];
+	let end: [any, any] = [0, 0];
 	$: middleFromLeft = (start[0] + end[0]) / 2;
 
 	let unSubscribe = refsStore.subscribe((refs) => {
@@ -26,7 +26,7 @@
 <svg>
 	<path
 		d="M {start[0]} {start[1]} C {middleFromLeft} {start[1]} {middleFromLeft} {end[1]} {end[0]} {end[1]}"
-		stroke="blue"
+		stroke="var(--color-green-500)"
 		stroke-width="3"
 		fill="none"
 	/>

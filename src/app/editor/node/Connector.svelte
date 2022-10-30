@@ -16,7 +16,7 @@
 	.connector {
 		width: 16px;
 		height: 16px;
-		background: red;
+		background: var(--color-green-700);
 		border-radius: 50%;
 	}
 </style>

@@ -25,7 +25,7 @@
 	function onMouseUp() {
 		moving = false;
 	}
-	$: console.log(moving);
+	// $: console.log(moving);
 
 	$: inConnectors = connectors.filter((c) => c.type === 'in');
 	$: outConnectors = connectors.filter((c) => c.type === 'out');
@@ -38,7 +38,12 @@
 
 <svelte:window on:mouseup={onMouseUp} on:mousemove={onMouseMove} />
 
-<article bind:this={nodeRef} style:left="{_position[0]}px" style:top="{_position[1]}px">
+<article
+	class="node"
+	bind:this={nodeRef}
+	style:left="{_position[0]}px"
+	style:top="{_position[1]}px"
+>
 	<header on:mousedown={onMouseDown}>Node</header>
 	<div>
 		<label>Data: <input type="text" value={data} /></label>
@@ -58,14 +63,15 @@
 </article>
 
 <style>
-	article {
+	.node {
 		position: absolute;
 		border: solid 1px black;
 		min-width: 150px;
 		min-height: 200px;
 		padding: 8px;
 
-		background-color: rgba(238, 238, 238, 0.516);
+		backdrop-filter: var(--blur-md);
+		box-shadow: var(--shadow-sm);
 	}
 
 	header {
