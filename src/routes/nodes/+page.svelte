@@ -1,10 +1,8 @@
 <script lang="ts">
-	import Editor from 'src/editor/Editor.svelte';
+	import Editor from 'src/app/editor/Editor.svelte';
 
 	let w: string = '100';
 	let h: string = '350';
-	let q: string = '150';
-	let q2: string = '-300';
 </script>
 
 <h1>Editor</h1>
